@@ -14,7 +14,7 @@ int main()
     //Despliegue de autoría en el terminal
     printf("****************************************************************************\n");
     printf("** Tarea 9, Belinda Brown B61254                                          **\n");
-    printf("** Cálculo de dos posiciones bidimensionales y el vector de flujo óptico  **\n");
+    printf("** Cálculo de dos posiciones bidimensionales y el vector de flujo óptico  **\n");
     printf("** Programa de referencia tomado del Prof. Dr.-Ing. Geovanni Martínez     **\n");
     printf("** IE-0449 Vision por Computador                                          **\n");
     printf("** I-2019                                                                 **\n");
@@ -120,6 +120,7 @@ int main()
     H0[0]=p_resultados->R0[0]*p_parametros->HR+p_resultados->R0[1]*p_parametros->HS+p_resultados->R0[2]*p_parametros->HT+p_parametros->GX0;
     H0[1]=p_resultados->R0[3]*p_parametros->HR+p_resultados->R0[4]*p_parametros->HS+p_resultados->R0[5]*p_parametros->HT+p_parametros->GY0;
     H0[2]=p_resultados->R0[6]*p_parametros->HR+p_resultados->R0[7]*p_parametros->HS+p_resultados->R0[8]*p_parametros->HT+p_parametros->GZ0;
+   //Puntero hacia la localización de memoria de la posición tridimensional en el instante cero
     p_resultados->HX0=H0[0];
     p_resultados->HY0=H0[1];
     p_resultados->HZ0=H0[2];
@@ -128,6 +129,7 @@ int main()
     H1[0]=p_resultados->R1[0]*p_parametros->HR+p_resultados->R1[1]*p_parametros->HS+p_resultados->R1[2]*p_parametros->HT+p_parametros->GX1;
     H1[1]=p_resultados->R1[3]*p_parametros->HR+p_resultados->R1[4]*p_parametros->HS+p_resultados->R1[5]*p_parametros->HT+p_parametros->GY1;
     H1[2]=p_resultados->R1[6]*p_parametros->HR+p_resultados->R1[7]*p_parametros->HS+p_resultados->R1[8]*p_parametros->HT+p_parametros->GZ1;
+    //Puntero hacia la localización de memoria de la posición tridimensional en el instante uno
     p_resultados->HX1=H1[0];
     p_resultados->HY1=H1[1];
     p_resultados->HZ1=H1[2];
@@ -135,17 +137,20 @@ int main()
     //Se calcula proyecciones del punto en el plano de la cámara en el instante cero
     H11[0]=p_parametros->dis_focal*p_resultados->HX0/p_resultados->HZ0;
     H11[1]=p_parametros->dis_focal*p_resultados->HY0/p_resultados->HZ0;
+    //Puntero hacia la localización de memoria de las proyecciones del punto en el plano de la cámara en el instante cero
     p_resultados->HX00=H11[0];
     p_resultados->HY00=H11[1];
     //Se calcula proyecciones del punto en el plano de la cámara en el instante uno
     H22[0]=p_parametros->dis_focal*p_resultados->HX1/p_resultados->HZ1;
     H22[1]=p_parametros->dis_focal*p_resultados->HY1/p_resultados->HZ1;
+    //Puntero hacia la localización de memoria de las proyecciones del punto en el plano de la cámara en el instante uno   
     p_resultados->HX11=H22[0];
     p_resultados->HY11=H22[1];
 
     //Se calcula el vector de flujo óptico
     op_flujo[0]=p_resultados->HX11-p_resultados->HX00;
     op_flujo[1]=p_resultados->HY11-p_resultados->HY00;
+    //Puntero hacia la localización de memoria del vector de flujo óptico
     p_resultados->dx=op_flujo[0];
     p_resultados->dy=op_flujo[1];
 
@@ -168,7 +173,6 @@ int main()
     geoSalvarResultadosEnArchivoDeTexto();
 
     //Liberando memoria reservada manualmente
-    free(p_parametros);
     free(p_parametros);
     free(p_resultados);
 
