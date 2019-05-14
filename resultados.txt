@@ -1,0 +1,30 @@
+Matriz de rotacion R0 para el instante cero
+R0[0]=0.604023
+R0[1]=0.728139
+R0[2]=0.323992
+R0[3]=0.719846
+R0[4]=-0.323992
+R0[5]=-0.613882
+R0[6]=-0.342020
+R0[7]=0.604023
+R0[8]=-0.719846
+
+Matriz de rotacion R1 para el instante uno
+R1[0]=0.696364
+R1[1]=-0.693714
+R1[2]=0.183949
+R1[3]=0.696364
+R1[4]=0.715118
+R1[5]=0.060692
+R1[6]=-0.173648
+R1[7]=0.085832
+R1[8]=0.981060
+
+Posicion bidimensional de la proyección del punto en el plano de la cámara en el instante cero
+HX00=-7.847910
+HY00=-1.001853
+Posicion bidimensional de la proyección del punto en el plano de la cámara en el instante uno
+HX11=17.559351
+HY11=3.481720
+Vector de flujo optico entre los instantes de tiempo cero y uno
+(25.407261, 4.483574)

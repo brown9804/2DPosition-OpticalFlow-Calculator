@@ -1,0 +1,23 @@
+Datos de entrada
+
+GX0 es 220.0
+GY0 es 10.0
+GZ0 es 2.0
+
+RX0 es 140.0
+RY0 es 20.0
+RZ0 es 50.0
+
+GX1 es 320.0
+GY1 es 40.0
+GZ1 es 8.0
+
+RX1 es 5.0
+RY1 es 10.0
+RZ1 es 45.0
+
+HR es 40.0
+HS es 1.0
+HT es 11.0
+
+f es 0.6
